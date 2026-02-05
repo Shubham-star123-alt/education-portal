@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digi-Yojana Government Portal - School Development</title>
+  <meta name="description" content="Official Yojana Government Portal for School Development in Rural and Urban Areas." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <!-- Leaflet CSS for maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+  
+  <!-- Top Banner -->
+  <header class="top-banner" role="banner">
+    <div class="container banner-inner">
+      <div class="brand">
+        <img src="Yojna.jpg" alt="National Emblem" class="emblem" />
+        <div class="brand-text">
+          <span class="site-overline">Government of India</span>
+          <h1 class="site-title">Digi-Yojana School Development Initiative</h1>
+        </div>
+      </div>
+      <div class="banner-actions">
+        <button class="lang-btn" aria-label="Change language">EN</button>
+        <a class="contrast-toggle" href="#" id="contrastToggle" aria-pressed="false">High Contrast</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="#" aria-label="Yojana Home">Yojana</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryMenu" aria-label="Toggle menu">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-menu" id="primaryMenu" role="menubar">
+        <li class="nav-item has-submenu" role="none">
+          <button class="submenu-toggle" aria-haspopup="true" aria-expanded="false" role="menuitem">
+            School Programs
+            <span class="chev" aria-hidden="true">▾</span>
+          </button>
+          <ul class="submenu" role="menu" aria-label="School Programs">
+            <li role="none"><a role="menuitem" href="#rural">Rural Development</a></li>
+            <li role="none"><a role="menuitem" href="#urban">Urban Development</a></li>
+            <li role="none"><a role="menuitem" href="#infrastructure">Infrastructure Grants</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-submenu" role="none">
+          <button class="submenu-toggle" aria-haspopup="true" aria-expanded="false" role="menuitem">
+            Resources
+            <span class="chev" aria-hidden="true">▾</span>
+          </button>
+          <ul class="submenu" role="menu" aria-label="Resources">
+            <li role="none"><a role="menuitem" href="#funding">Funding Options</a></li>
+            <li role="none"><a role="menuitem" href="https://youtu.be/xqcs-LVyd-c?si=wK_YLsJ6Gd6mfpqu" target="_blank">Teacher Training</a></li>
+            <li role="none"><a role="menuitem" href="#digital">Digital Classroom</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" role="none"><a role="menuitem" href="#map-container">School Map</a></li>
+        <li class="nav-item" role="none"><a role="menuitem" href="#news">News</a></li>
+        <li class="nav-item" role="none"><a role="menuitem" href="#contact">Contact</a></li>
+	<li class="nav-item" ><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Search Bar -->
+  <section class="search-section">
+    <div class="container search-inner">
+      <form class="search-form" role="search" aria-label="Site search" onsubmit="return false;">
+        <label for="siteSearch" class="sr-only">Search school programs, resources, or information</label>
+        <input id="siteSearch" type="search" placeholder="Search school programs, resources, or information" />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      <div class="quick-links">
+        <span>Quick links:</span>
+        <a href="#rural">Rural Schools</a>
+        <a href="#urban">Urban Schools</a>
+        <a href="#funding">Apply for Funds</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h2>Transforming Education Infrastructure Across India</h2>
+        <p>From rural village schools to urban educational centers, discover resources and support for developing world-class educational facilities.</p>
+        <div class="hero-actions">
+          <a href="#programs" class="btn btn-primary">Explore Programs</a>
+          <a href="#map-container" class="btn btn-outline">View School Map</a>
+        </div>
+      </div>
+      <div class="hero-card" role="region" aria-label="Important notice">
+        <h3>New Initiative</h3>
+        <p>Digital Classroom Grant applications now open for schools in tier 2 & 3 cities. Deadline: October 31.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Content -->
+  <main id="main">
+    <!-- Programs -->
+    <section class="section" id="programs" aria-labelledby="programsTitle">
+      <div class="container">
+        <h2 id="programsTitle">School Development Programs</h2>
+        <div class="grid services-grid">
+          <article class="service-card" id="rural">
+            <h3>Rural School Development</h3>
+            <p>Comprehensive support for building and upgrading schools in rural areas, including infrastructure, teacher training, and digital resources.</p>
+            <button class="btn btn-secondary">Learn More</button>
+          </article>
+          <article class="service-card" id="urban">
+            <h3>Urban School Enhancement</h3>
+            <p>Programs focused on improving facilities, reducing overcrowding, and implementing technology in city schools.</p>
+            <button class="btn btn-secondary">Learn More</button>
+          </article>
+          <article class="service-card" id="infrastructure">
+            <h3>Infrastructure Grants</h3>
+            <p>Financial assistance for construction, renovation, and maintenance of school buildings across India.</p>
+            <button class="btn btn-secondary">Apply Now</button>
+          </article>
+          <article class="service-card" id="digital">
+            <h3>Digital Classroom Initiative</h3>
+            <p>Equipping schools with technology, internet access, and digital teaching resources for modern education.</p>
+            <button class="btn btn-secondary">View Options</button>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="section alt" id="map-container" aria-labelledby="mapTitle">
+      <div class="container">
+        <h2 id="mapTitle">Government Schools Across India</h2>
+        <div class="map-search-container">
+          <div class="map-controls">
+            <input type="text" id="citySearch" list="schoolsList" placeholder="Search by school name or city..." />
+            <datalist id="schoolsList"></datalist>
+
+            <select id="cityDropdown">
+              <option value="">-- Select a city --</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Thane">Thane</option>
+              <option value="Navi Mumbai">Navi Mumbai</option>
+              <option value="Kalyan">Kalyan</option>
+              <option value="Badlapur">Badlapur</option>
+              <option value="Vasai">Vasai</option>
+              <option value="Dombivli">Dombivli</option>
+              <option value="Ulhasnagar">Ulhasnagar</option>
+            </select>
+
+            <button id="searchBtn" class="btn btn-primary">Search</button>
+            <button id="resetViewBtn" class="btn btn-outline">Reset View</button>
+          </div>
+          <div id="schoolMap"></div>
+          <div class="map-legend">
+            <h4>School Types:</h4>
+            <div class="legend-item"><span class="legend-color primary-school"></span><span>Primary Schools</span></div>
+            <div class="legend-item"><span class="legend-color secondary-school"></span><span>Secondary Schools</span></div>
+            <div class="legend-item"><span class="legend-color higher-secondary"></span><span>Higher Secondary</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Resources -->
+    <section class="section" id="resources" aria-labelledby="resourcesTitle">
+      <div class="container">
+        <h2 id="resourcesTitle">Resources & Support</h2>
+        <div class="grid services-grid">
+          <article class="service-card" id="funding">
+            <h3>NEP 2020: The Vision</h3>
+            <p> is a landmark reform that lays the strategic foundation for transforming India’s education system. It recognizes that traditional methods of learning are outdated in a digital-first world.</p>
+            <button class="btn btn-secondary"><a href="https://www.education.gov.in/sites/upload_files/mhrd/files/NEP_Final_English_0.pdf">View Options</a></button>
+          </article>
+          <article class="service-card" id="training">
+            <h3>SWAYAM: Open Access to Higher Education</h3>
+            <p>While DIKSHA and PM eVidya cater primarily to school-level education, SWAYAM (Study Webs of Active-Learning for Young Aspiring Minds) is focused on higher education and lifelong learning.</p>
+            <button class="btn btn-secondary"><a href="https://swayam.gov.in/"> Programs </a></button>
+          </article>
+          <article class="service-card">
+            <h3> DIKSHA: India’s National Digital Learning Platform</h3>
+            <p>At the heart of India’s digital education ecosystem is DIKSHA (Digital Infrastructure for Knowledge Sharing). It is a multilingual, mobile-friendly learning platform developed by the Ministry of Education.</p>
+            <button class="btn btn-secondary"><a href="https://share.google/mUQ97UZ9woybcbM0a">For more</a></button>
+          </article>
+          <article class="service-card">
+            <h3>National Digital Education Architecture (NDEAR)</h3>
+            <p>The National Digital Education Architecture (NDEAR) is perhaps the most futuristic of all initiatives. It is a digital infrastructure designed to unify and streamline all education-related data and platforms in India.</p>
+            <button class="btn btn-secondary"><a href="https://www.ndear.gov.in/">Contact Support</a></button>
+          </article>
+        </div>
+      </div>
+    </section>
+<!-- ADD THIS JUST BELOW YOUR EXISTING PROGRAMS SECTION -->
+<section class="section alt" id="schemes">
+  <div class="container">
+    <h2>Government Education Schemes & Scholarships</h2>
+    <div class="grid services-grid">
+
+      <!-- SCHOOL STUDENTS -->
+      <article class="service-card">
+        <h3>School Students – Scholarships & Nutrition</h3>
+        <p>Government scholarships, free education support and nutrition schemes for school students.</p>
+        <ul>
+          <li><a href="https://scholarships.gov.in/All-Scholarships" target="_blank">National Scholarship Portal</a></li>
+          <li><a href="https://services.india.gov.in/service/detail/apply-and-search-student-scholarships-online-1" target="_blank">Scholarship Finder</a></li>
+          <li><a href="https://en.vikaspedia.in/viewcontent/schemesall/schemes-for-students" target="_blank">Vikaspedia Schemes</a></li>
+          <li><a href="https://pmposhan.education.gov.in/" target="_blank">Mid-Day Meal Scheme</a></li>
+        </ul>
+      </article>
+
+      <!-- COLLEGE STUDENTS -->
+      <article class="service-card">
+        <h3>College Students – Scholarships & Loans</h3>
+        <p>Scholarships, education loans, internships and higher education programs.</p>
+        <ul>
+          <li><a href="https://scholarships.gov.in/All-Scholarships" target="_blank">National Scholarship Portal</a></li>
+          <li><a href="https://www.education.gov.in/scholarships-education-loan-hi" target="_blank">Education Ministry Support</a></li>
+          <li><a href="https://services.india.gov.in/service/detail/apply-and-search-student-scholarships-online-1" target="_blank">Vidya Lakshmi Portal</a></li>
+          <li><a href="https://en.vikaspedia.in/viewcontent/schemesall/schemes-for-students" target="_blank">Internships & Skills</a></li>
+        </ul>
+      </article>
+
+      <!-- GIRLS SCHEMES -->
+      <article class="service-card">
+        <h3>Girls Special Schemes</h3>
+        <p>Special scholarships and national programs supporting girls education.</p>
+        <ul>
+          <li><a href="https://scholarships.gov.in/All-Scholarships" target="_blank">Girls Scholarships Portal</a></li>
+          <li><a href="https://betibachao.gov.in/" target="_blank">Beti Bachao Beti Padhao</a></li>
+        </ul>
+      </article>
+
+      <!-- MAHARASHTRA -->
+      <article class="service-card">
+        <h3>Maharashtra State Schemes</h3>
+        <p>Scholarships and welfare programs for Maharashtra students.</p>
+        <ul>
+          <li><a href="https://mahadbt.maharashtra.gov.in/" target="_blank">MahaDBT Portal</a></li>
+          <li><a href="https://www.buddy4study.com/article/maharashtra-scholarship" target="_blank">Scholarship Information</a></li>
+        </ul>
+      </article>
+
+      <!-- ALL INDIA -->
+      <article class="service-card">
+        <h3>All India Government Schemes</h3>
+        <p>Central government education scholarships and schemes.</p>
+        <ul>
+          <li><a href="https://socialjustice.gov.in/schemes" target="_blank">Social Justice Schemes</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/List_of_schemes_of_the_government_of_India" target="_blank">Govt Schemes List</a></li>
+        </ul>
+      </article>
+
+      <!-- EXTRA -->
+      <article class="service-card">
+        <h3>Learning & Internship Resources</h3>
+        <p>Free courses and government internship opportunities.</p>
+        <ul>
+          <li><a href="https://swayam.gov.in/" target="_blank">SWAYAM Courses</a></li>
+          <li><a href="https://www.apprenticeshipindia.gov.in/" target="_blank">Apprenticeship Training</a></li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+    
+    <!-- News -->
+    <section class="section alt" id="news" aria-labelledby="newsTitle">
+      <div class="container">
+        <h2 id="newsTitle">News, Announcements & Support</h2>
+        <div class="grid news-grid">
+          <article class="news-card">
+            <span class="badge">Update</span>
+            <h3>5000 Rural Schools Selected for Digital Upgrade</h3>
+            <p>Government announces the next phase of digital classroom implementation in remote areas.</p>
+            <a href="https://www.education.gov.in/sites/upload_files/mhrd/files/irde_21.pdf" class="text-link">Read more</a>
+          </article>
+          <article class="news-card">
+            <span class="badge">Grant</span>
+            <h3>New Infrastructure Fund Launched</h3>
+            <p>₹200 crore allocated for toilet facilities and drinking water in schools across 5 states.</p>
+            <a href="#" class="text-link">Read more</a>
+          </article>
+          <article class="news-card">
+            <span class="badge">Partnership</span>
+            <h3>Public-Private School Initiative</h3>
+            <p>Corporate partners join hands with government to develop 100 model schools in urban centers.</p>
+            <a href="#" class="text-link">Read more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+<!-- Student Complaints & Help Portals -->
+<section class="section alt" id="contact" aria-labelledby="complaintTitle">
+  <div class="container">
+    <h2 id="complaintTitle">Student Complaints & Help Portals</h2>
+    <p class="section-desc">
+      Official government platforms where students, parents and teachers can report school or college-related issues.
+    </p>
+
+    <div class="grid services-grid">
+
+      <!-- National -->
+      <article class="service-card">
+        <h3>National Public Grievance Portal</h3>
+        <p>Register complaints related to government schools, education departments and public services.</p>
+        <a class="btn btn-secondary" href="https://pgportal.gov.in/" target="_blank">File Complaint</a>
+      </article>
+
+      <!-- Maharashtra -->
+      <article class="service-card">
+        <h3>Maharashtra Grievance Portal</h3>
+        <p>Official Maharashtra government portal for education and school-related complaints.</p>
+        <a class="btn btn-secondary" href="https://grievances.maharashtra.gov.in/en" target="_blank">Submit Grievance</a>
+      </article>
+
+      <!-- RTE -->
+      <article class="service-card">
+        <h3>Right to Education (RTE) Complaints</h3>
+        <p>Report issues related to admissions, fees, discrimination and RTE violations.</p>
+        <a class="btn btn-secondary" href="https://righttoeducation.in/report-grievance" target="_blank">Report Issue</a>
+      </article>
+
+      <!-- Child Safety -->
+      <article class="service-card">
+        <h3>Child Safety & Abuse Complaints</h3>
+        <p>Report harassment, abuse or safety issues involving children in schools.</p>
+        <a class="btn btn-secondary" href="https://ncpcr.gov.in/ebaalnidan/main/complaint" target="_blank">File Complaint</a>
+      </article>
+
+      <!-- College -->
+      <article class="service-card">
+        <h3>UGC e-Samadhan (College Issues)</h3>
+        <p>Grievance redressal portal for universities and colleges across India.</p>
+        <a class="btn btn-secondary" href="https://samadhaan.ugc.ac.in/" target="_blank">Register Grievance</a>
+      </article>
+
+      <!-- Emergency -->
+      <article class="service-card">
+        <h3>Child Helpline (Emergency)</h3>
+        <p>For urgent help related to children’s safety, abuse or neglect.</p>
+        <p><strong>Dial: 1098</strong></p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  
+  <!-- Footer -->
+  <footer class="footer" id="contact" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3>About Yojana School Initiative</h3>
+        <p>National program focused on developing and enhancing educational infrastructure across rural and urban India through strategic funding and support.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#rural">Rural Development</a></li>
+          <li><a href="#urban">Urban Development</a></li>
+          <li><a href="#funding">Funding Options</a></li>
+          <li><a href="#map-container">School Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li>Email: schools@yojana.gov.in</li>
+          <li>Phone: +91 1800 123 4567</li>
+          <li>Hours: Mon–Sat, 9 AM–6 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <small>© 2025 Yojana Government School Development Portal</small>
+        <div class="social">
+          <a href="#" aria-label="Twitter">Twitter</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- Leaflet JS for maps -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
