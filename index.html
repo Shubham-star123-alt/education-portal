@@ -398,9 +398,19 @@
 </section>
 
 <!-- ================= VISITOR COUNTER SCRIPT ================= -->
-<!-- REAL VISITOR COUNTER (GOATCOUNTER) -->
-<script data-goatcounter="https://digi-yojana.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- PUBLIC VISITOR COUNT (REAL NUMBER) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("visitorCount");
+  if (!el) return;
+
+  fetch("https://api.countapi.xyz/hit/digi-yojana-portal/visits")
+    .then(r => r.json())
+    .then(d => {
+      el.textContent = d.value;
+    });
+});
+</script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -410,6 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
   
   <!-- Footer -->
   <footer class="footer" id="contact" role="contentinfo">
@@ -453,6 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
