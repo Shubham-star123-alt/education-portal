@@ -358,6 +358,54 @@
     </div>
   </div>
 </section>
+	<!-- ================= REVIEWS SECTION ================= -->
+<section class="section alt" id="reviews">
+  <div class="container">
+    <h2>Student & School Feedback</h2>
+
+    <p style="font-weight:600; margin-bottom:20px;">
+      👀 Total Visitors: <span id="visitorCount">Loading...</span>
+    </p>
+
+    <div class="grid services-grid">
+
+      <article class="service-card">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>This website helped our school find scholarship schemes easily. Very useful platform!</p>
+        <strong>— Government School Teacher</strong>
+      </article>
+
+      <article class="service-card">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>I didn't know about education grants before. Now I applied successfully.</p>
+        <strong>— Student, Maharashtra</strong>
+      </article>
+
+      <article class="service-card">
+        <h3>⭐⭐⭐⭐</h3>
+        <p>Good initiative for spreading awareness about government education programs.</p>
+        <strong>— NGO Volunteer</strong>
+      </article>
+
+      <article class="service-card">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>Simple, clean and very informative website. Helpful for rural schools.</p>
+        <strong>— Education Coordinator</strong>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISITOR COUNTER SCRIPT ================= -->
+<script>
+fetch("https://api.countapi.xyz/hit/digi-yojana-site/visits")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visitorCount").innerText = data.value;
+  });
+</script>
+
 
   
   <!-- Footer -->
@@ -402,3 +450,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
