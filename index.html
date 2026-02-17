@@ -399,13 +399,20 @@
 
 <!-- ================= VISITOR COUNTER SCRIPT ================= -->
 <script>
-fetch("https://api.countapi.xyz/hit/digi-yojana-site/visits")
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("visitorCount").innerText = data.value;
-  });
-</script>
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("visitorCount");
+  if (!el) return;
 
+  fetch("https://api.countapi.xyz/hit/digi-yojana-site/visits")
+    .then(res => res.json())
+    .then(data => {
+      el.innerText = data.value;
+    })
+    .catch(() => {
+      el.innerText = "Unavailable";
+    });
+});
+</script>
 
   
   <!-- Footer -->
@@ -450,4 +457,5 @@ fetch("https://api.countapi.xyz/hit/digi-yojana-site/visits")
   <script src="script.js"></script>
 </body>
 </html>
+
 
