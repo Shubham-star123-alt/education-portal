@@ -358,7 +358,7 @@
     </div>
   </div>
 </section>
-	<!-- ================= REVIEWS SECTION ================= -->
+<!-- ================= REVIEWS SECTION ================= -->
 <section class="section alt" id="reviews">
   <div class="container">
     <h2>Student & School Feedback</h2>
@@ -398,22 +398,18 @@
 </section>
 
 <!-- ================= VISITOR COUNTER SCRIPT ================= -->
+<!-- REAL VISITOR COUNTER (GOATCOUNTER) -->
+<script data-goatcounter="https://digi-yojana.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const el = document.getElementById("visitorCount");
-  if (!el) return;
-
-  fetch("https://api.countapi.xyz/hit/digi-yojana-site/visits")
-    .then(res => res.json())
-    .then(data => {
-      el.innerText = data.value;
-    })
-    .catch(() => {
-      el.innerText = "Unavailable";
-    });
+  if (el) {
+    el.innerHTML = "Live counter enabled ✔ (stats tracked automatically)";
+  }
 });
 </script>
-
   
   <!-- Footer -->
   <footer class="footer" id="contact" role="contentinfo">
@@ -457,5 +453,6 @@ document.addEventListener("DOMContentLoaded", () => {
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
